@@ -24,11 +24,15 @@ function App() {
     fetchData()
   }, {search})
 
+  const handleSearch = (e, term) => {
+    e.preventDefault()
+    setSearch(term)
+  }
 
 
   return (
     <div className="App">
-      <SearchBar/>
+      <SearchBar handleSearch = {handleSearch} />
       {message}
       <Gallery/>
     </div>
